@@ -90,9 +90,9 @@ class _DogBreedViewerState extends State<DogBreedViewer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 235, 171, 191),
+      backgroundColor: const Color.fromARGB(255, 1, 81, 16),
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 148, 199, 247),
+        backgroundColor: const Color.fromARGB(255, 13, 239, 164),
         title: const Text("Random Dog Viewer"),
       ),
       body: _isLoading
@@ -136,7 +136,7 @@ class _DogBreedViewerState extends State<DogBreedViewer> {
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
-                      color: Colors.teal.shade800,
+                      color: const Color.fromARGB(255, 13, 239, 164),
                       letterSpacing: 1.5,
                     ),
                   ),
@@ -180,7 +180,7 @@ class _DogBreedViewerState extends State<DogBreedViewer> {
                   const SizedBox(height: 30),
                   ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.teal.shade600,
+                      backgroundColor: const Color.fromARGB(255, 13, 239, 164),
                       padding: const EdgeInsets.symmetric(
                         horizontal: 28,
                         vertical: 14,
