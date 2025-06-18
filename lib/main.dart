@@ -141,42 +141,33 @@ class _DogBreedViewerState extends State<DogBreedViewer> {
                     ),
                   ),
                   const SizedBox(height: 24),
-                  Container(
-                    constraints: BoxConstraints(maxHeight: 300, maxWidth: 350),
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.teal.withOpacity(0.25),
-                          blurRadius: 12,
-                          offset: const Offset(0, 6),
-                        ),
-                      ],
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    clipBehavior: Clip.antiAlias,
-                    child: Image.network(
-                      _currentImageUrl!,
-                      fit: BoxFit.cover,
-                      loadingBuilder: (context, child, progress) {
-                        if (progress == null) return child;
-                        return SizedBox(
-                          height: 300,
-                          child: const Center(
-                            child: CircularProgressIndicator(),
-                          ),
-                        );
-                      },
-                      errorBuilder: (context, error, stackTrace) => SizedBox(
-                        height: 300,
-                        child: Center(
-                          child: Text(
-                            "Bild konnte nicht geladen werden",
-                            style: TextStyle(color: Colors.red.shade700),
+                  Center(
+                    child: SizedBox(
+                      height: 300,
+                      width: 300,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image.network(
+                          _currentImageUrl!,
+                          fit: BoxFit
+                              .cover, // Oder BoxFit.contain, je nach Vorliebe
+                          loadingBuilder: (context, child, progress) {
+                            if (progress == null) return child;
+                            return const Center(
+                              child: CircularProgressIndicator(),
+                            );
+                          },
+                          errorBuilder: (context, error, stackTrace) => Center(
+                            child: Text(
+                              "Bild konnte nicht geladen werden",
+                              style: TextStyle(color: Colors.red.shade700),
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
+
                   const SizedBox(height: 30),
                   ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
